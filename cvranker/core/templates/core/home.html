@@ -1,0 +1,49 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Main Action Section (without hero image) -->
+<section class="bg-gray-50 py-16">
+  <div class="max-w-6xl mx-auto px-4 flex flex-col items-center gap-8">
+
+    <!-- Text Content -->
+    <div class="text-center">
+      <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        Upload your CV & get ranked
+      </h1>
+      <p class="text-gray-700 mb-8">
+        Register or login and upload your CV. We'll parse it and show the best matching job roles based on your skills.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="{% url 'upload_cv' %}" class="bg-blue-600 text-white py-3 px-6 rounded-lg text-center hover:bg-blue-700">
+          Upload CV
+        </a>
+        <a href="{% url 'register' %}" class="border border-blue-600 text-blue-600 py-3 px-6 rounded-lg text-center hover:bg-blue-600 hover:text-white">
+          Register
+        </a>
+        <a href="{% url 'login' %}" class="border border-gray-400 text-gray-700 py-3 px-6 rounded-lg text-center hover:bg-gray-200">
+          Login
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="max-w-6xl mx-auto px-4 mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+  <div class="bg-white p-6 rounded-lg shadow text-center">
+    <h3 class="text-xl font-semibold mb-2">Fast CV Parsing</h3>
+    <p class="text-gray-600">Upload your CV and get instant skill analysis and job ranking.</p>
+  </div>
+  <div class="bg-white p-6 rounded-lg shadow text-center">
+    <h3 class="text-xl font-semibold mb-2">Top Job Matches</h3>
+    <p class="text-gray-600">See the top jobs that match your skills and experience.</p>
+  </div>
+  <div class="bg-white p-6 rounded-lg shadow text-center">
+    <h3 class="text-xl font-semibold mb-2">Easy Registration</h3>
+    <p class="text-gray-600">Sign up easily and start uploading your CV right away.</p>
+  </div>
+</section>
+
+{% endblock %}

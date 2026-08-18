@@ -1,0 +1,13 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - C:/Users/HP/Desktop/cvranker:/app   # Windows absolute path
+      - db_data:/app/db.sqlite3             # Persist SQLite DB
+    environment:
+      - DEBUG=1
+
+volumes:
+  db_data:

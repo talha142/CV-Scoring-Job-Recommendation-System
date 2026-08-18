@@ -1,0 +1,46 @@
+{% extends 'core/base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow mt-12">
+  <h2 class="text-2xl font-bold mb-4 text-center">Register</h2>
+
+  <form method="post">
+    {% csrf_token %}
+
+    {% if form.errors %}
+      <div class="mb-4 text-red-600">
+        Please correct the errors below.
+      </div>
+    {% endif %}
+
+    <div class="mb-3">
+      {{ form.username|add_class:"w-full p-2 border rounded" }}
+      {% if form.username.errors %}
+        <p class="text-red-600 text-sm">{{ form.username.errors.0 }}</p>
+      {% endif %}
+    </div>
+
+    <div class="mb-3">
+      {{ form.password1|add_class:"w-full p-2 border rounded" }}
+      {% if form.password1.errors %}
+        <p class="text-red-600 text-sm">{{ form.password1.errors.0 }}</p>
+      {% endif %}
+    </div>
+
+    <div class="mb-3">
+      {{ form.password2|add_class:"w-full p-2 border rounded" }}
+      {% if form.password2.errors %}
+        <p class="text-red-600 text-sm">{{ form.password2.errors.0 }}</p>
+      {% endif %}
+    </div>
+
+    <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+      Register
+    </button>
+  </form>
+
+  <p class="text-sm mt-4 text-center">
+    Already have an account? <a href="{% url 'login' %}" class="text-blue-600">Login</a>
+  </p>
+</div>
+{% endblock %}

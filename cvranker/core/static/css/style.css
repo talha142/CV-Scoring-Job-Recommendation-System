@@ -1,0 +1,6 @@
+body {
+    background-color: #f3f4f6;
+}
+button:hover {
+    transition: 0.3s;
+}
