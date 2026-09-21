@@ -1,0 +1,11 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+.env
+
+# local database and user-uploaded CVs (personal data)
+db.sqlite3
+cvranker/media/
+
+.DS_Store
